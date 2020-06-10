@@ -6,7 +6,46 @@ In this exercise project we will create an app in several stage, driven by redux
 
 We will see how we can go from first simple displaying of state to changing of state, to API fetching & updating
 
-### Step 1
+### Step 2 - Adding data
+
+Now it is time to change data in our state.
+
+We want to implement adding of new books.
+
+So we need to get into the scary territory of the reducer the first time in this app. We need to create some actions (=operations with data) that we send (=dispatch) to our reducer.
+
+- Provide a book adding operation in your reducer
+  - Add a switch case statement
+  - Provide a default case which just returns the state "as is" (`return state`)
+  - Add a case for your action type "ADD_BOOK"
+    - Create a copy of your books array and append the new book
+    - The data for the new book should be available in the payload
+    - Return at the end a copy of your whole state and overwrite the books array
+  - For Debugging: Add a console.log at the begin of your reducer (outside the switch-case)
+    - Log here the action you receive
+
+- Create an add form
+  - provide two inputs title & author + add button
+  - save the input values on typing in local state (= UI state), not in Redux please
+
+- Setup action to change state
+  - Create a file "actions.js" and create and export a so called "action creator" 
+    (= a function that returns an action object with type and payload)
+  - Import the action in your component
+  - Use the second parameter of connect() function and pass in an object with your action
+    - this will make your action for changing state available to our component
+
+
+- On Form Submit
+  - Dispatch the action "ADD_BOOK" to your reducer
+  - Test if your adding works and your list gets updated
+
+Great! If you master dispatching, you will master Redux. 
+
+We will practice it more in the upcoming stages, so postpone any suicide action!
+
+
+### Step 1 - Setup Redux & SCSS
 
 Prep:
 - Fork this repository
