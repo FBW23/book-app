@@ -28,13 +28,16 @@ So we need to get into the scary territory of the reducer the first time in this
   - provide two inputs title & author + add button
   - save the input values on typing in local state (= UI state), not in Redux please
 
-- On Form Submit
-  - Dispatch the action "ADD_BOOK" to your reducer
+- Setup action to change state
   - Create a file "actions.js" and create and export a so called "action creator" 
     (= a function that returns an action object with type and payload)
   - Import the action in your component
   - Use the second parameter of connect() function and pass in an object with your action
     - this will make your action for changing state available to our component
+
+
+- On Form Submit
+  - Dispatch the action "ADD_BOOK" to your reducer
   - Test if your adding works and your list gets updated
 
 Great! If you master dispatching, you will master Redux. 
