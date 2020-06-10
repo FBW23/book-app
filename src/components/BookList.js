@@ -5,12 +5,13 @@ class BookList extends Component {
 
   render() { 
 
-    console.log("Props:", this.props)
-    
     let books = this.props.books || []
 
     let jsxBookList = books.map(book => (
-      <div className="book" key={book.id}>{book.title}</div>
+      <div className="book" key={book.id}>
+        <div className="book-title">{book.title}</div>
+        <div className="book-author">{book.author}</div>
+      </div>
     ))
 
     return ( <div className="books">{jsxBookList}</div> );
