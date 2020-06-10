@@ -4,8 +4,8 @@ import { connect } from "react-redux"; //import the state
 class BookList extends Component {
   render() {
     let book = this.props.books;
-    let booksMap = book.map((book) => <div><p>{book.name}</p>
-    <p>{book.author}</p></div>);
+    let booksMap = book.map((book) => <div><p>Title : {book.name}</p>
+    <p className='author'>Author : {book.author}</p></div>);
 
     return <div>{booksMap}</div>;
   }
