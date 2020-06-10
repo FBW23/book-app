@@ -27,4 +27,19 @@ main{
 
 .author{
   border-bottom: 1px solid grey;
+  padding: 20px
 }
+.inputs-container{
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    margin: 0 auto;
+button{
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 10vw;
+} input{
+  margin: 5px;
+  border-radius: 50px;
+  background: white;
+}}
