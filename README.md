@@ -6,6 +6,22 @@ In this exercise project we will create an app in several stage, driven by redux
 
 We will see how we can go from first simple displaying of state to changing of state, to API fetching & updating
 
+### Step 3 - Filtering data
+
+Now we wanna provide filtering of books.
+
+- Add some more data to your initial book list with repeated terms
+  - e.g. two books which have the term “React” in the title
+- Add a new key searchTerm to your initial state (default: empty string)
+- Create a switch case handler for updating searchTerm
+- Add a filter component which just holds one input field for your search term
+  - OnChange: update the searchTerm in Redux
+- Adapt your BookList
+  - Import the searchTerm from Redux as prop
+  - In render function
+    - Check at the beginning if searchTerm is set
+    - If so: Filter your array before rendering the JSX list
+
 ### Step 2 - Adding data
 
 Now it is time to change data in our state.
