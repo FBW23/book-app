@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faSave, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faSave, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { updateBook, deleteBook } from '../store/actions';
 
@@ -13,32 +13,58 @@ class Book extends Component {
     author: this.props.book.author
   };
 
+  toggleEditMode = () => {
+    this.setState({editMode: !this.state.editMode})
+  }
+
   updateBook = () => {
-    let titleNew = prompt("New title:")
-    if(!titleNew) return // no title given? get outta here...
-    let book = this.props.book
-    this.props.updateBook({...book, title: titleNew}); // update item in redux store
+    let book = this.props.book;
+
+    // update item in redux store
+    this.props.updateBook({ ...book,
+      title: this.state.title, // update title with our value from input field
+      author: this.state.author // update author with out value from input field
+    }); 
+    this.toggleEditMode()
   };
 
   render() {
-
-    let book = this.props.book
+    let book = this.props.book;
+    let editMode = this.state.editMode;
 
     return (
-      <div className="book" >
-        <div></div>
-        <div className="book-info">
-          <div className="book-title">{book.title}</div>
-          <div className="book-author">{book.author}</div>
+      <div className="book">
+        <div />
+        <div className="book-info" onDoubleClick={this.toggleEditMode}>
+          <div className="book-title">
+          { editMode ? 
+              <input type="text" 
+                value={this.state.title} 
+                onChange={(e) => this.setState({ title: e.target.value })} /> :
+            book.title
+          }
+          </div>
+          <div className="book-author">
+          { editMode ? 
+              <input type="text" 
+              value={this.state.author} 
+              onChange={(e) => this.setState({ author: e.target.value })} /> :
+            book.author
+          }
+          </div>
         </div>
         <div className="book-actions">
-          <FontAwesomeIcon icon={faEdit} onClick={this.updateBook} />
+          <FontAwesomeIcon icon={faSave} onClick={this.updateBook} 
+            style={{visibility: editMode ? "visible" : "hidden" }}
+          />
+          <FontAwesomeIcon icon={faEdit} 
+            onClick={this.toggleEditMode} 
+          />
           <FontAwesomeIcon icon={faTrashAlt} 
-            onClick={() => this.props.deleteBook(book.id) } />
+          onClick={() => this.props.deleteBook(book.id)} />
         </div>
       </div>
     );
-
   }
 }
 

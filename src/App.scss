@@ -62,6 +62,17 @@ main {
       .book-info {
         width: 60%;
 
+        input {
+          background: transparent;
+          border: none;
+          border-bottom: 1px groove #ccc;
+          border-radius: 5px;
+          text-align: center;
+          font-size: inherit;
+          font-family: inherit;
+          width: 80%;
+        }
+
         .book-title {
           font-size: 1.4rem;
           margin-bottom: 3px;
@@ -73,7 +84,7 @@ main {
       
       .book-actions {
         svg {
-          margin: 3px;
+          margin: 4px;
           &:hover { color: rgb(142, 142, 209); }
         }
       }
