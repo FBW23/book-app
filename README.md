@@ -6,6 +6,72 @@ In this exercise project we will create an app in several stage, driven by redux
 
 We will see how we can go from first simple displaying of state to changing of state, to API fetching & updating
 
+### Step 4 - Updating & Deleting data
+
+Now we want to explore changing book items, the Redux way
+
+Prep:
+
+  - Outsource your Book JSX in your BookList to a separate component "Book"
+  - In BookList component: Pass in the book data as prop
+  - Test if your display of books still works
+  - Install React-FontAwesome:
+    - Instructions: [React-Fontawesome](https://github.com/FortAwesome/react-fontawesome#installation)
+    - Or directly: `npm i --save @fortawesome/fontawesome-svg-core  @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome`
+  - Display icons in your Book component
+    - One for edit (e.g. faEdit) and one for delete (e.g. faTrash or faTrashAlt)
+    - Usage of React-Fontawesome in a component - [Examples](https://github.com/FortAwesome/react-fontawesome#usage)
+
+
+Deletion:
+
+  - Write an deletion case handler in your reducer
+    - in payload you expect the id of a book
+    - use filter to filter out all books that NOT have this id
+      - for safety: rather use != instead of !== comparison
+    - overwrite the books array in state with the filtered array:
+      - `{...state, books: filteredArray }`
+  - Create an action for deletion in actions.js
+  - Import the action and "connect" it to your Book component
+  - Call the action when you click your delete icon
+    - Hint: `this.props.<yourActionName>`
+
+
+Updating:
+
+  - Write a book update case handler in your reducer
+    - It should receive a book object as payload
+    - Use map to create an array copy and update single item in one go
+  - Create an action for editing in actions.js
+  - Import the action and "connect" it to your Book component
+  - Realize simple editing first
+    - when clicking the edit button - open a prompt using JS prompt() function
+    - once the user entered a value and clicked OK:
+      - Create an object which merges your current book with the new title:
+        - e.g.: `let bookNew = { ...this.props.book, title: <newTitle> }`
+      - Call your update action and pass in that object
+  - Test if your editing of a title works
+
+
+Bonus - Inline Editing:
+
+- Still in your Book component - create local state with tree fields:
+  - editMode: false, 
+  - title: this.props.title, 
+  - author: this.props.author
+- Adapt the JSX in render:
+  - If edit mode is false 
+    - conditionally render just the value (no input)
+  - If edit mode is true 
+    - conditionally render an input field
+    - also show a save icon
+- Create a toggleFunction to toggle the editMode
+- Call the toggleFunction when you click the Edit Icon
+- Bind the two input fields to your local state fields (title & author)
+  - onChange is your friend for that
+- When clicking save:
+  - call your update action and pass in the updated book 
+
 ### Step 3 - Filtering data
 
 Now we wanna provide filtering of books.

@@ -77,6 +77,26 @@ main {
     }
   } // end of .book-add
 
+  // book filter form
+  .book-filter {
+
+    margin-bottom: 10px;
+
+    input {
+      background: #ccc;
+      opacity: 0.9;
+      border-radius: 25px;
+      width: 100%;
+      outline: none;
+      padding: 10px;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+  }
+
 }
 
 

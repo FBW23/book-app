@@ -3,8 +3,6 @@ const booksReducer = (state, action) => {
 
   console.log("Reducer received action: ", action);
   
-  // action: { type, payload}
-
   switch(action.type) {
 
     // handle ADD_BOOK action that was sent to us
@@ -17,6 +15,9 @@ const booksReducer = (state, action) => {
       let stateCopy = {...state, books: booksUpdated}
       return stateCopy
 
+    case "UPDATE_SEARCH_TERM":
+      return {...state, searchTerm: action.payload}
+      
     default: 
       return state
   }

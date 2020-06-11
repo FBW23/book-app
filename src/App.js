@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import BookList from './components/BookList';
 import BookAdd from './components/BookAdd';
+import BookFilter from './components/BookFilter';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       </header>
       <main>
         <div className="books-container">
+          <BookFilter></BookFilter>
           <BookList></BookList>
           <BookAdd></BookAdd>
         </div>
