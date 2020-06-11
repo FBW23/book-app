@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background: rgb(138, 33, 82);
+}
+
+main{
+  height: 70vh;
+  margin: 50px;
+}
+.books-container{
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.author{
+  
+  padding: 20px
+}
+.inputs-container{
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    margin: 0 auto;
+button{
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 10vw;
+} input{
+  margin: 5px;
+  border-radius: 50px;
+  background: white;
+}}
+
+.books-info{
+  border-bottom: 1px solid grey;
+}
+// .books-info{
+//   display: flex;
+//   width: 80vw;
+//   .book-sec{
+//     width: 70%;
+//   }
+// }
+
+.icons{
+  svg { 
+    margin: 3px; 
+
+    &:hover {
+      color: rgb(195, 52, 52);
+    }
+}
+}
