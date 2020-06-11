@@ -2,9 +2,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Exercise Project - Book List CRUD - powered by Redux
 
-In this exercise project we will create an app in several stage, driven by redux.
+In this exercise project we will create an app in several stages, driven by redux.
 
-We will see how we can go from first simple displaying of state to changing of state, to API fetching & updating
+We will see how we can go from first simple displaying of state data in components to changing of state, including adding data, updating data and deleting data.
+
+Bonus topics: Live filtering of data and inline editing.
+
 
 ### Step 4 - Updating & Deleting data
 
