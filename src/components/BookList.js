@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Book from './Book';
 
 class BookList extends Component {
 
@@ -18,13 +19,12 @@ class BookList extends Component {
     }
 
     let jsxBookList = books.map(book => (
-      <div className="book" key={book.id}>
-        <div className="book-title">{book.title}</div>
-        <div className="book-author">{book.author}</div>
-      </div>
+      <Book key={book.id} book={book}></Book>
     ))
 
-    return ( <div className="books">{jsxBookList}</div> );
+    return ( <div className="books">{
+      books.length > 0 ? jsxBookList : <div>No books available</div>
+    }</div> );
   }
 
 }

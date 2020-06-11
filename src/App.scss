@@ -49,14 +49,37 @@ main {
       border-radius: 50px;
       margin: 10px 0;
 
-      .book-title {
-        font-size: 1.4rem;
-        margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      // this is for left and right items
+      & > * {
+        width: 20%;
       }
-      .book-author {
-        font-size: 0.9rem;
+
+      // mid item should take the rest
+      .book-info {
+        width: 60%;
+
+        .book-title {
+          font-size: 1.4rem;
+          margin-bottom: 3px;
+        }
+        .book-author {
+          font-size: 0.9rem;
+        }
       }
-    }
+      
+      .book-actions {
+        svg {
+          margin: 3px;
+          &:hover { color: rgb(142, 142, 209); }
+        }
+      }
+
+    } // end of .book
+
   } // end of .books
 
   // book add form
@@ -65,8 +88,8 @@ main {
     display: flex;
 
     input, button {
-      padding: 5px;
-      border-radius: 15px;
+      padding: 7px;
+      border-radius: 25px;
       outline: none;
     }
 
@@ -74,6 +97,11 @@ main {
       flex-grow: 1;
       background: #ccc;
       margin-right: 5px;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 1rem;
+      }
     }
   } // end of .book-add
 
