@@ -26,7 +26,7 @@ main{
 }
 
 .author{
-  border-bottom: 1px solid grey;
+  
   padding: 20px
 }
 .inputs-container{
@@ -43,3 +43,24 @@ button{
   border-radius: 50px;
   background: white;
 }}
+
+.books-info{
+  border-bottom: 1px solid grey;
+}
+// .books-info{
+//   display: flex;
+//   width: 80vw;
+//   .book-sec{
+//     width: 70%;
+//   }
+// }
+
+.icons{
+  svg { 
+    margin: 3px; 
+
+    &:hover {
+      color: rgb(195, 52, 52);
+    }
+}
+}
