@@ -9,6 +9,38 @@ We will see how we can go from first simple displaying of state data in componen
 Bonus topics: Live filtering of data and inline editing.
 
 
+### Step 5 - Setup own API
+
+We now want to manage the data of our App in our own API now.
+
+- Install JSON server
+  - `npm i json-server` (or globally for reuse in other projects: `npm i -g json-server`)
+
+- Create a data folder in your project (one the same level as folders /src and /public)
+  - Create a books.json file in that folder
+  - Copy your books from your Redux initialState to there
+  - Please make sure all your keys are surrounded by quotes (JSON format is strict)
+  - Clear the books array in your initial state (= make it an empty array)
+
+- Add a script to your package.json file, at the end of section "scripts":
+  "api": "json-server -w ./data/books.json -p 8000
+
+- Start your API: `npm run api`
+  - Test in the browser if you can view all books and single books
+
+- Open a second terminal in VSCode
+  - Fire up React there with `npm start`
+
+
+### Bonus - Backend & Frontend in one shot
+
+Wanna start both api and React in the terminal in parallel with just one command?
+
+- Research the package "concurrently"
+- Try to make it work :)
+
+
+
 ### Step 4 - Updating & Deleting data
 
 Now we want to explore changing book items, the Redux way
