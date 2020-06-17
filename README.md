@@ -9,40 +9,6 @@ We will see how we can go from first simple displaying of state data in componen
 Bonus topics: Live filtering of data and inline editing.
 
 
-### Step 6 - Thunkify - Bind our API with thunk
-
-- Install the redux-thunk package
-- Attach thunk as middleware to your store
-  - You need to import applyMiddleware function from redux
-
-- Create an action to receive books (= ordinary action)
-  - That action received an array of books as paramater
-  - It forwards the array to the reducer as payload
-
-- Create an action to fetch books (= async action)
-  - It should return a function instead of an action (=> so THUNK will intercept and handle this!)
-  - Don't forget that this function will get injected the parameter "dispatch" by thunk - so you can then send an action to the reducer "manually" once your fetch is ready
-  - Fetch the data from your books API in that function
-  - After the data fetching is done => dispatch the RECEIVED_BOOKS action
-    - don't forget to pass in the received books
-
-- Adapt reducer
-  - Add a new case to handle received books
-
-- App.js
-  - import your fetchBooks action here
-  - "connect" it to your component
-  - add componentDidMount
-    - dispatch your fetchBooks action here to load the API data
-
-Bonus:
-
-- Add avatars for the book authors to your API
-  - do that by adding an avatar URL for each book object in your books.json
-  - quickly wanna get some avatar URLS? [https://uifaces.co/](https://uifaces.co/)
-- Display the avatars in your book card
-
-
 
 ### Step 5 - Setup own API
 
