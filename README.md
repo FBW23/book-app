@@ -19,7 +19,7 @@ Bonus topics: Live filtering of data and inline editing.
   - Update your ADD_BOOK handler in your reducer:     
     - Comment out the creation of the ID here (the ID is now created by the API!)
   - Update your addBook action: 
-    - It should receive the full book as parameter (so including ID, not just title & author) and should also the full book as payload to Redux
+    - It should receive the full book as parameter (so including ID, not just title & author) and should send the full book as payload to Redux
 
 Bonus: 
 - Implement a modal dialog for your delete method
