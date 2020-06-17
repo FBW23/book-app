@@ -5,7 +5,10 @@ const booksReducer = (state, action) => {
   
   switch(action.type) {
 
-    // handle ADD_BOOK action that was sent to us
+    case "RECEIVED_BOOKS":
+      let booksReceived = action.payload
+      return {...state, books: booksReceived}
+      
     case "ADD_BOOK":
       let bookNew = action.payload // { title, author }
       bookNew.id = Date.now()

@@ -9,6 +9,31 @@ We will see how we can go from first simple displaying of state data in componen
 Bonus topics: Live filtering of data and inline editing.
 
 
+### Step 7 - Crudify - Perform Create, Update, Delete against API
+
+- Install Axios
+- Create async actions to perform full CRUD against your API
+  - After responses: Dispatch your "simple" actions to update the store
+
+- Special case: Adding
+  - Update your ADD_BOOK handler in your reducer:     
+    - Comment out the creation of the ID here (the ID is now created by the API!)
+  - Update your addBook action: 
+    - It should receive the full book as parameter (so including ID, not just title & author) and should also the full book as payload to Redux
+
+Bonus: 
+- Implement a modal dialog for your delete method
+  - Ready to use component: [React Modal](https://github.com/reactjs/react-modal)
+  - Follow the install instructions & the example
+  - Add a Confirm & Cancel button in your modal to confirm / cancel deletion of a book
+
+All works?
+
+Congratulations! 
+
+You are able to do full CRUD state operations in React including an API now. That is a huge milestone in the mastery of React.
+
+
 ### Step 6 - Thunkify - Bind our API with thunk
 
 - Install the redux-thunk package

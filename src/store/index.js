@@ -1,15 +1,13 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import booksReducer from "./reducer";
+import thunk from 'redux-thunk'
 
 const initialState = {
   
-  books: [
-    {id: 1, title: "Guide to React Mastery", author: "FBW23"},
-    {id: 2, title: "Guide to Happiness", author: "Unknown"},
-  ],
+  books: [],
   searchTerm: ''
 }
 
-let store = createStore(booksReducer, initialState)
+let store = createStore(booksReducer, initialState, applyMiddleware(thunk))
 
 export default store
